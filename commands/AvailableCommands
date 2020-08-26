@@ -1,0 +1,29 @@
+package command;
+
+import command.commands.*;
+
+import java.util.HashMap;
+
+public class AvailableCommands {
+    private HashMap<String, Command> commands;
+    public AvailableCommands() {
+        commands = new HashMap<>();
+        commands.put("help", new HelpCommand());
+        commands.put("info", new InfoCommand());
+        commands.put("show", new ShowCommand());
+        commands.put("add", new AddCommand());
+        commands.put("update", new UpdateCommand());
+        commands.put("remove_by_id", new RemoveByIdCommand());
+        commands.put("clear", new ClearCommand());
+        commands.put("history", new HistoryCommand());
+        commands.put("login", new LoginCommand());
+        commands.put("register", new RegisterCommand());
+
+    }
+    public HashMap<String, Command> getCommands() {
+        return commands;
+    }
+    public Command getCommand(String key) {
+        return commands.get(key);
+    }
+}
